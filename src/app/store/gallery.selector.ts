@@ -27,13 +27,24 @@ El 'createSelector' se puede utilizar para seleccionar algunos
     https://rxjs.dev/guide/operators
 */
 //  This selector's job is to return the unique 'albumId' collection.
+ // Use to remove duplicate elements from the array 
+ // const numbers = [2,3,4,4,2,3,3,4,4,5,5,6,6,7,5,32,3,4,5]
+//spreading numbers of the object into an array using the new operator
+// console.log([...new Set(numbers)]) 
 export const uniqueAlbumIds = createSelector(
     gallerySelector,
-    (gallery: GalleryModel[]) => {
-      return [...new Set(gallery.map((_) => _.albumId))];
+    (state: GalleryModel[]) => {
+      return [...new Set(state.map((_) => _.albumId))];
     }
   );
-
+  // createSelector and createFeatureSelector :
+// keeps track of the latest arguments
+// in which your selector function was invoked.
+/*
+ as memoization.
+el último resultado puede devolverse cuando los argumentos 
+coinciden sin volver a invocar su función de selector. 
+*/
   export const albumCollectionByAlbumId = (albumId:number) => 
   createSelector(
     gallerySelector,

@@ -12,7 +12,9 @@ export class GalleryService {
     return this.http
       .get<GalleryModel[]>('https://jsonplaceholder.typicode.com/photos')
       .pipe(
-        map((albums) => albums.filter(i=>i.id <6) || [])
+        map((albums) => albums.filter(i=>i.albumId <3) || [])
+        //map(albums => albums),
+        //filter(i=>i.albumId <4) || []
         
       
         );

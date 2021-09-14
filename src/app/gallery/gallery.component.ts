@@ -4,6 +4,7 @@ import { retrievedGalleryList } from '../store/gallery.acttion';
 import { albumCollectionByAlbumId, uniqueAlbumIds } from '../store/gallery.selector';
 import { GalleryModel } from './gallery.model';
 import { GalleryService } from './gallery.service';
+import { AppState } from './../store/app.state';
 
 @Component({
   selector: 'app-gallery',
@@ -17,8 +18,9 @@ export class GalleryComponent implements OnInit {
     select(albumCollectionByAlbumId(this.selectedAlbumId))
   );
   constructor(
-   
-    private store: Store<{ gallery: GalleryModel[] }>,
+    //private store: Store,
+    //Store<{ gallery: GalleryModel[] }>
+    private store: Store<AppState>,
     private galleryService: GalleryService
 
   ) { }
