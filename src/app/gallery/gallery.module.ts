@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { GalleryRoutingModule } from './gallery-routing.module';
 import { GalleryComponent } from './gallery.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     GalleryRoutingModule,
+    RouterModule,
     FormsModule
   ]
 })

@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { galleryReducer } from './store/gallery.reducer';
 import { GalleryService } from './gallery/gallery.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    RouterModule,
     StoreModule.forRoot({ gallery: galleryReducer })
   ],
   providers: [GalleryService],
