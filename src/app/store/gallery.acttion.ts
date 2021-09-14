@@ -10,3 +10,13 @@ export const retrievedGalleryList = createAction(
     "[Gallery API] Gallery API Success",
     props<{allGallery:GalleryModel[]}>()
 );
+// https://www.thisdot.co/blog/strong-typing-the-state-and-actions-in-ngrx
+export const likePhoto = createAction(
+    '[Photo List] Like Photo',
+    props<{id: string}>()
+  );
+  
+  export const dislikePhoto = createAction(
+    '[Photo List] Dislike Photo',
+    props<{id: string}>()
+  );

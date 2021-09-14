@@ -1,10 +1,21 @@
-import { createSelector } from '@ngrx/store';
+import { createSelector} from '@ngrx/store';
 import { GalleryModel } from '../gallery/gallery.model';
  
-import { AppState } from './app.state';
+import { AppState, State } from './app.state';
  
 export const gallerySelector =(state: AppState) => state.gallery;
+
+export const selectArrayObject=(state: State)=> state.featureNameplace.gallery;
+  
+export const selecFeatureGallery=
+createSelector(
+  selectArrayObject,
+  (state:GalleryModel[])=>state.map(gallery=>gallery)
+)
 /*
+createFeatureSelector: Crea un selector de características para el estado.
+
+createSelector: Crea un selector para generar un estado especificado.
 Los selectores son funciones puras que se 
 utilizan para obtener las partes o cortes del store state
 El 'createSelector' se puede utilizar para seleccionar algunos

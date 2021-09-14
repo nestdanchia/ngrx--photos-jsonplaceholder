@@ -8,6 +8,8 @@ import { galleryReducer } from './store/gallery.reducer';
 import { GalleryService } from './gallery/gallery.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent
@@ -17,7 +19,8 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,
-    StoreModule.forRoot({ gallery: galleryReducer })
+    StoreModule.forRoot({ gallery: galleryReducer }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [GalleryService],
   bootstrap: [AppComponent]
